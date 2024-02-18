@@ -22,7 +22,7 @@ const CartItems = (props) => {
                 </Col>
                 <Col>
                   <td>
-                    <Button>REMOVE</Button>
+                    <Button onClick={props.OnRemove}>REMOVE</Button>
                   </td>
                 </Col>
               </Row>

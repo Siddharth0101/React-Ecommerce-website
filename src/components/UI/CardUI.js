@@ -1,6 +1,14 @@
 import { Button, Card } from "react-bootstrap";
 
 const CardUI = (props) => {
+  const submitHandler = () => {
+    const data = {
+      id: props.id,
+      title: props.title,
+      price: props.price,
+    };
+    props.data(data);
+  };
   return (
     <div>
       <Card style={{ width: "25rem" }}>
@@ -13,7 +21,7 @@ const CardUI = (props) => {
             <h4> Price-${props.price}</h4>
           </Card.Text>
         </Card.Body>
-        <Button variant="primary" size="lg">
+        <Button variant="primary" size="lg" onClick={submitHandler}>
           ADD TO CART
         </Button>
       </Card>

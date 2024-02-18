@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import CartContext from "../../store/cart-context";
 
 const HeaderCartButton = (props) => {
+  const cartCtx = useContext(CartContext);
   return (
     <Button variant="primary" onClick={props.OnShow}>
       <Container>
@@ -16,7 +19,7 @@ const HeaderCartButton = (props) => {
                 fontWeight: "bold",
               }}
             >
-              3
+              {cartCtx.items.length}
             </div>
           </Col>
         </Row>
