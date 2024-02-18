@@ -1,6 +1,8 @@
 // Cart.js
 import React, { useState } from "react";
 import ModalUI from "../UI/ModalUI";
+import CartItems from "./CartItems";
+import { Button, Container, Row, Table } from "react-bootstrap";
 
 const dummyArray = [
   {
@@ -11,23 +13,23 @@ const dummyArray = [
   },
   {
     title: "blue",
+    price: 150,
   },
 ];
 
 const Cart = (props) => {
-  const [showCart, setShowCart] = useState(false);
-
-  const handleToggleCart = () => {
-    setShowCart((prevShowCart) => !prevShowCart);
-  };
-
   return (
     <div>
       {dummyArray.map((item) => (
         <ModalUI show={props.show} OnHide={props.OnHide}>
           {dummyArray.map((item) => (
-            <li>{item.title}</li>
+            <CartItems title={item.title} price={item.price} />
           ))}
+          <Container>
+            <Row>
+              <Button>Purchase</Button>
+            </Row>
+          </Container>
         </ModalUI>
       ))}
     </div>

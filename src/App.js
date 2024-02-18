@@ -8,7 +8,7 @@ import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 
 function App() {
-  const [modalShow, setModalShow] = React.useState(true);
+  const [modalShow, setModalShow] = React.useState(false);
   const cartShow = () => {
     setModalShow(true);
   };
