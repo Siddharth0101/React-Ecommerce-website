@@ -10,6 +10,15 @@ const Cart = (props) => {
   const removeHandler = (id) => {
     cartCtx.removeItem(id);
   };
+
+  const purchaseHandler = () => {
+    if (cartCtx.items.length == 0) {
+      window.alert("Add items ");
+    } else {
+      window.alert("Success");
+    }
+  };
+
   return (
     <div>
       <ModalUI show={props.show} OnHide={props.OnHide}>
@@ -22,7 +31,7 @@ const Cart = (props) => {
         ))}
         <Container>
           <Row>
-            <Button>Purchase</Button>
+            <Button onClick={purchaseHandler}>Purchase</Button>{" "}
           </Row>
         </Container>
       </ModalUI>

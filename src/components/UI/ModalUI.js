@@ -6,7 +6,12 @@ import Modal from "react-bootstrap/Modal";
 function ModalUI(props) {
   return (
     <div>
-      <Offcanvas show={props.show} onHide={props.OnHide} placement="end">
+      <Offcanvas
+        show={props.show}
+        onHide={props.OnHide}
+        placement="end"
+        style={{ backgroundColor: "lightgray" }}
+      >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
             <Container>

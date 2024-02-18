@@ -17,11 +17,19 @@ function App() {
     setModalShow(false);
   };
   return (
-    <CardProvider>
-      <Header OnShow={cartShow} />
-      <Colors />
-      {modalShow && <Cart OnHide={cartHide} show={modalShow} />}
-    </CardProvider>
+    <div
+      style={{
+        backgroundColor: "gray",
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
+      <CardProvider>
+        <Header OnShow={cartShow} />
+        <Colors />
+        {modalShow && <Cart OnHide={cartHide} show={modalShow} />}
+      </CardProvider>
+    </div>
   );
 }
 

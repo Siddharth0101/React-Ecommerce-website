@@ -15,14 +15,19 @@ const CartItems = (props) => {
                   <td>{props.price}</td>
                 </Col>
                 <Col>
-                  {" "}
                   <td>
-                    <input style={{ width: "3rem" }} type="number" />
+                    <input
+                      defaultValue={1}
+                      style={{ width: "3rem" }}
+                      type="number"
+                    />
                   </td>
                 </Col>
                 <Col>
                   <td>
-                    <Button onClick={props.OnRemove}>REMOVE</Button>
+                    <Button onClick={props.OnRemove} variant="danger">
+                      REMOVE
+                    </Button>
                   </td>
                 </Col>
               </Row>

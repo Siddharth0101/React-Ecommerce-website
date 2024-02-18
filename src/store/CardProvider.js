@@ -15,6 +15,7 @@ const cartReducer = (state, action) => {
       const updatedItem = { ...existingItem };
       updatedItems = [...state.items];
       updatedItems[existingIndex] = updatedItem;
+      window.alert("Item already exists in the cart!");
     } else {
       updatedItems = state.items.concat(action.item);
     }
