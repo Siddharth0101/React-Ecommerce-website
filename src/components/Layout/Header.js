@@ -23,7 +23,7 @@ const Header = (props) => {
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
-          <HeaderCartButton />
+          <HeaderCartButton OnShow={props.OnShow} />
         </Container>
       </Navbar>
     </div>

@@ -2,7 +2,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 
 const HeaderCartButton = (props) => {
   return (
-    <Button variant="primary">
+    <Button variant="primary" onClick={props.OnShow}>
       <Container>
         <Row>
           <Col style={{ paddingTop: "0.3rem" }}>CART</Col>
