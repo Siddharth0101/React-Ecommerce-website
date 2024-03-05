@@ -1,5 +1,5 @@
 import Carousel from "react-bootstrap/Carousel";
-import Image1 from "../../images/Image1/pexels-element-digital-1550337.jpg";
+import Image1 from "../../images/Image1/AdobeStock_523676700_Preview.jpeg";
 import Image2 from "../../images/Image2/pexels-linda-ellershein-3127880.jpg";
 import Image3 from "../../images/Image3/AdobeStock_133066505_Preview.jpeg";
 import { Container, Row, Col } from "react-bootstrap";
