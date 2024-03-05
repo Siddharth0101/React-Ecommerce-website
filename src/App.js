@@ -1,35 +1,57 @@
-import logo from "./logo.svg";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import React from "react";
-import { Button } from "react-bootstrap";
-import Header from "./components/Layout/Header";
-import Colors from "./components/Colors/Colors";
-import Cart from "./components/Cart/Cart";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Store from "./pages/Store/Store";
 import { useState } from "react";
+import Cart from "./components/Cart/Cart";
 import CardProvider from "./store/CardProvider";
 
 function App() {
-  const [modalShow, setModalShow] = React.useState(false);
-  const cartShow = () => {
-    setModalShow(true);
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+  const showOffcanvasHandler = () => {
+    setShowOffcanvas(true);
   };
-  const cartHide = () => {
-    setModalShow(false);
+  const hideOffcanvasHandler = () => {
+    setShowOffcanvas(false);
   };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Header onShow={showOffcanvasHandler} />,
+      children: [
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/store",
+          element: <Store />,
+        },
+      ],
+    },
+  ]);
   return (
-    <div
-      style={{
-        backgroundColor: "gray",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
-      <CardProvider>
-        <Header OnShow={cartShow} />
-        <Colors />
-        {modalShow && <Cart OnHide={cartHide} show={modalShow} />}
-      </CardProvider>
-    </div>
+    <CardProvider>
+      <div
+        style={{
+          backgroundColor: "grey",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        {showOffcanvas && (
+          <Cart show={showOffcanvas} OnHide={hideOffcanvasHandler} />
+        )}
+
+        <RouterProvider router={router} />
+      </div>
+    </CardProvider>
   );
 }
 
