@@ -16,9 +16,9 @@ const HeaderCartButton = (props) => {
             <div
               style={{
                 backgroundColor: "black",
-                borderRadius: "18px",
-                padding: "0.2rem 0.8rem",
-                marginLeft: "0.8rem",
+                borderRadius: "25px",
+                padding: "0.25rem 1rem",
+                marginLeft: "1rem",
                 fontWeight: "bold",
               }}
             >

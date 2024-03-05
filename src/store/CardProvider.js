@@ -1,8 +1,9 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import CartContext from "./cart-context";
 import { Alert } from "react-bootstrap";
 
 const CardProvider = (props) => {
+  const [doubleError, setDoubleError] = useState(false);
   const defaultState = {
     items: [],
   };
@@ -17,6 +18,7 @@ const CardProvider = (props) => {
         const updatedItem = { ...existingItem };
         updatedItems = [...state.items];
         updatedItems[existingIndex] = updatedItem;
+        setDoubleError(true);
       } else {
         updatedItems = state.items.concat(action.item);
       }
@@ -51,6 +53,7 @@ const CardProvider = (props) => {
     addItem: addItemHandler,
     removeItem: removeItemHandler,
   };
+  props.OnDoubleError(doubleError);
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}

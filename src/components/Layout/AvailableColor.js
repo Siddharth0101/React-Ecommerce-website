@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CardUI from "../UI/CardUI";
 import CartContext from "../../store/cart-context";
+import { Alert } from "react-bootstrap";
 
 const cartElements = [
   {

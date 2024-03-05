@@ -15,8 +15,12 @@ const CardUI = (props) => {
       <Card style={{ width: "25rem" }}>
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>${props.price}</Card.Text>
+          <Card.Title>
+            <h4>{props.title}</h4>
+          </Card.Title>
+          <Card.Text>
+            <h4>Price-${props.price}</h4>
+          </Card.Text>
         </Card.Body>
         <div className="d-grid gap-2">
           <Button variant="primary" size="lg" onClick={dataHandler}>
